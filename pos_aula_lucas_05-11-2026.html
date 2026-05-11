@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<title>Resumo Pós-Aula — Lucas — CZK English</title>
+<script type="text/javascript" src="https://me.kis.v2.scr.kaspersky-labs.com/FD126C42-EBFA-4E12-B309-BB3FDD723AC1/main.js?attr=WHcD6vXLY0P_T-1MuGwoBmzjFxGxCT8yklWQ1gKcmkQB-J_TjC3K5o0bxMT6f-jfxkRACXXCsyvVcD1NXDG77h2fTbDqKdkrUdjlqTnxzcXKZloseHSHOjClOtkMf8BFyBCyIw5hM-2HRpFLphVI725DTsQ8m55QMI5-itHoMgbVGTZAyWu-IF0FIRwuV-rU4UhG04_rf6ZnwFKnEIV1va9Gry0pdg--sUC9OLkED-qyKLVFXZAu6vtWvwNn31VKUhQaDnIgJqpJqViPfO45xA" charset="UTF-8"></script><style>
+    :root{
+      --page-bg: #f4f7fa;
+      --card-bg: #fff;
+      --accent: #2f86e6;
+      --accent-dark: #1f6fd1;
+      --green: #36b37e;
+      --muted: #6b7280;
+      --border: #e6eef8;
+      --box-radius: 12px;
+      --card-width: 720px;
+    }
+
+    html,body{
+      height:100%;
+      margin:0;
+      padding:0;
+      background:var(--page-bg);
+      font-family:Inter, "Segoe UI", Roboto, Arial, sans-serif;
+    }
+
+    .wrap{
+      min-height:100%;
+      display:flex;
+      align-items:flex-start;
+      justify-content:center;
+      padding:48px 20px;
+    }
+
+    .card{
+      width:100%;
+      max-width:var(--card-width);
+      background:var(--card-bg);
+      border-radius:18px;
+      padding:28px;
+      box-shadow:0 6px 22px rgba(33,47,60,0.06);
+      border:1px solid rgba(15,33,64,0.03);
+    }
+
+    header{
+      display:flex;
+      justify-content:space-between;
+      align-items:flex-start;
+      gap:12px;
+      margin-bottom:8px;
+    }
+
+    .badge{
+      background:linear-gradient(180deg,#fff,#f2fbff);
+      border:1px solid var(--border);
+      padding:8px 12px;
+      border-radius:999px;
+      color:var(--accent);
+      font-weight:700;
+      font-size:0.85rem;
+    }
+
+    h1{
+      margin:0;
+      font-size:1.3rem;
+      color:#0f1724;
+    }
+
+    .meta{
+      color:var(--muted);
+      font-size:0.92rem;
+      margin-top:6px;
+    }
+
+    .actions{
+      display:flex;
+      gap:10px;
+    }
+
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      padding:10px 14px;
+      border-radius:10px;
+      border:none;
+      background:var(--accent);
+      color:#fff;
+      text-decoration:none;
+      font-weight:600;
+      cursor:pointer;
+      box-shadow:0 6px 14px rgba(47,134,230,0.12);
+    }
+
+    .btn.secondary{
+      background:#fff;
+      color:var(--accent);
+      border:1px solid var(--border);
+      box-shadow:none;
+    }
+
+    main{margin-top:18px;}
+    section{margin-top:18px;}
+
+    .panel{
+      background:#fbfdff;
+      border-radius:12px;
+      padding:16px;
+      border:1px solid var(--border);
+    }
+
+    .outline-card{
+      border-radius:10px;
+      border:1px solid var(--border);
+      padding:16px;
+      background:#fff;
+    }
+
+    /* Vocabulary boxes */
+    .vocab-grid{
+      display:flex;
+      gap:14px;
+      flex-wrap:wrap;
+      margin-top:10px;
+    }
+
+    .vocab{
+      flex:1;
+      min-width:220px;
+      border-radius:10px;
+      padding:14px;
+      border:2px solid #dfeefe;
+      background:#fff;
+    }
+
+    .vocab.green{
+      border-color:#c9f3dc;
+      background:#f5fff6;
+    }
+
+    .vocab h3{
+      margin:0;
+      font-size:1rem;
+      color:#154360;
+    }
+
+    .vocab p{
+      margin:8px 0 0 0;
+      color:var(--muted);
+      font-size:0.95rem;
+    }
+
+    /* Transcrição / gravação buttons */
+    .media-row{
+      display:flex;
+      gap:14px;
+      margin-top:12px;
+      flex-wrap:wrap;
+    }
+
+    .media-btn{
+      background:#fff;
+      border:1px solid var(--border);
+      padding:12px 16px;
+      border-radius:10px;
+      font-weight:700;
+      color:var(--accent);
+      text-decoration:none;
+      display:inline-flex;
+      align-items:center;
+      gap:10px;
+      min-width:200px;
+      justify-content:center;
+    }
+
+    /* Homework box */
+    .homework{
+      background:#f3fff6;
+      border:1px solid #d7f5df;
+      border-radius:10px;
+      padding:14px;
+      margin-top:10px;
+    }
+
+    /* ===== TALK TIME – TABELA RETANGULAR ===== */
+    .speaking{
+      margin-top:18px;
+      padding:16px;
+      border-radius:12px;
+      background:linear-gradient(180deg,#ffffff,#fbfdff);
+      border:1px solid var(--border);
+      max-width:640px;
+    }
+
+    .speaking h2{
+      margin:0 0 10px 0;
+      font-size:1.05rem;
+      color:#0f1724;
+    }
+
+    .talk-table{
+      width:100%;
+      border-collapse:collapse;
+      border-radius:10px;
+      overflow:hidden;
+      background:#fff;
+      border:1px solid #e1e9f5;
+      font-size:0.9rem;
+    }
+
+    .talk-table th,
+    .talk-table td{
+      padding:8px 10px;
+      text-align:left;
+    }
+
+    .talk-table th{
+      background:#eef4ff;
+      color:#1b3556;
+      font-weight:700;
+      border-bottom:1px solid #dde6fa;
+    }
+
+    .row-teacher{
+      background:#e7f2ff; /* azul clarinho */
+    }
+
+    .row-student{
+      background:#e8f7ef; /* verde clarinho */
+    }
+
+    .talk-label{
+      font-weight:700;
+    }
+
+    .talk-percent{
+      font-weight:700;
+      color:#0f1724;
+    }
+
+    .talk-time{
+      color:var(--muted);
+    }
+
+    footer{
+      margin-top:20px;
+      color:var(--muted);
+      font-size:0.9rem;
+      text-align:center;
+    }
+
+    /* responsive */
+    @media (max-width:720px){
+      .card{padding:18px;border-radius:14px;}
+      .vocab-grid{flex-direction:column;}
+      .media-row{flex-direction:column;}
+    }
+  </style>
+</head>
+<body>
+<div class="wrap">
+<article class="card" role="main">
+<header>
+<div>
+<div style="display:flex;gap:10px;align-items:center;">
+<span class="badge">PÓS-AULA</span>
+<h1>Gender Roles, Double Standards &amp; Work Hours</h1>
+</div>
+<div class="meta" style="margin-top:8px;"><strong>Professor:</strong> César  •  <strong>Aluno:</strong> Lucas  •  <strong>Data:</strong> 05/11/2026</div>
+</div>
+<div class="actions">
+<a class="btn" href="#" onclick="window.print();return false;">Imprimir / Salvar PDF</a>
+</div>
+</header>
+<main>
+<section class="panel">
+<p style="margin:0;font-weight:600;color:#08325a;">Resumo da aula sobre gender pay gap, double standards, breadwinner, backup plan e leitura de gráfico sobre trabalho pago e não pago.</p>
+</section>
+<section>
+<h2 style="margin-bottom:8px;">Resumo da Aula</h2>
+<div class="outline-card">
+<p style="margin:0 0 8px 0;">
+  A aula começou com uma conversa livre sobre acontecimentos do dia, carro, bateria, pneu furado, trabalho, família e Mother's Day. Esse início serviu como aquecimento oral, com prática espontânea de passado, rotina, problemas do dia a dia e vocabulário de carro, como <em>flat tire</em>, <em>inflate the tire</em>, <em>battery</em> e <em>mechanic</em>.
+</p>
+<p style="margin:0 0 8px 0;">
+  Depois, retomamos o conteúdo da aula anterior sobre <strong>financial outlook</strong>, <strong>gender pay gap</strong>, <strong>backup plan</strong>, <strong>double standard</strong> e <strong>breadwinner</strong>. O aluno tentou explicar os termos com suas próprias palavras, e o professor reforçou os significados principais, principalmente <em>double standard</em> como “dois pesos e duas medidas” e <em>breadwinner</em> como a pessoa que sustenta financeiramente a família.
+</p>
+<p style="margin:0 0 8px 0;">
+  A parte central da aula foi uma discussão sobre <strong>sexism</strong>, diferenças salariais entre homens e mulheres, contratação, gravidez, produtividade, papéis sociais e responsabilidades familiares. O aluno argumentou que parte da desigualdade vem de uma construção social e cultural, ligada ao histórico de homens trabalhando fora e mulheres ficando mais associadas ao trabalho doméstico.
+</p>
+<p style="margin:0 0 8px 0;">
+  Também discutimos <strong>backup plan</strong> dentro da carreira do aluno. Ele falou sobre tecnologia, programação, suporte, help desk, mercado de trabalho e uso de IA para programar. A conversa conectou inglês com uma reflexão real sobre carreira: continuar na mesma área, mudar de área, trabalhar por dinheiro ou por interesse, e como a IA muda o papel do programador.
+</p>
+<p style="margin:0 0 8px 0;">
+  Em seguida, trabalhamos exemplos de <strong>double standards based on gender</strong>. O aluno teve dificuldade para formular o primeiro exemplo, mas depois conseguiu entender melhor com exemplos sobre dating, emoções, homens chorando, mulheres chorando, cuidados com filhos e troca de fraldas. O foco foi perceber como a mesma ação pode ser julgada de forma diferente dependendo se quem faz é homem ou mulher.
+</p>
+<p style="margin:0;">
+  No final, analisamos um gráfico sobre <strong>paid work</strong> e <strong>unpaid work</strong> em diferentes regiões do mundo. O aluno interpretou que, em geral, homens fazem mais trabalho pago, enquanto mulheres fazem mais trabalho não pago, especialmente ligado à casa e aos filhos. A unidade foi finalizada, e a próxima aula ficará focada em conversação e revisão.
+</p>
+</div>
+</section>
+<section>
+<h2 style="margin-bottom:8px;">Key Vocabulary</h2>
+<div class="vocab-grid">
+<div class="vocab">
+<h3>Double standard</h3>
+<p style="margin-top:8px;font-size:0.92rem;color:var(--muted);">
+<em>(pt) dois pesos e duas medidas</em><br/>
+<small>There is a double standard about men and women crying.</small>
+</p>
+</div>
+<div class="vocab green">
+<h3>Unpaid work</h3>
+<p style="margin-top:8px;font-size:0.92rem;color:var(--muted);">
+<em>(pt) trabalho não pago</em><br/>
+<small>Women often do more unpaid work at home.</small>
+</p>
+</div>
+</div>
+</section>
+<!-- NOVOS TÓPICOS: VOCABULÁRIO DA AULA, FRASES MODELO, CORREÇÕES -->
+<section>
+<h2 style="margin-bottom:8px;">Vocabulário da aula</h2>
+<div class="outline-card">
+<h3 style="margin-top:0;">Aquecimento e rotina</h3>
+<ul>
+<li><strong>I can't complain</strong> – não posso reclamar</li>
+<li><strong>long day</strong> – dia longo</li>
+<li><strong>flat tire</strong> – pneu murcho / pneu furado</li>
+<li><strong>inflate the tire</strong> – encher o pneu</li>
+<li><strong>battery</strong> – bateria</li>
+<li><strong>battery shop</strong> – loja de bateria</li>
+<li><strong>mechanic</strong> – mecânico</li>
+<li><strong>pick up the car</strong> – buscar o carro</li>
+<li><strong>spend money</strong> – gastar dinheiro</li>
+<li><strong>Mother's Day</strong> – Dia das Mães</li>
+<li><strong>gift</strong> – presente</li>
+<li><strong>gymnastic clothes</strong> – roupas de ginástica</li>
+<li><strong>vacation</strong> – férias</li>
+</ul>
+<h3>Gender, society and work</h3>
+<ul>
+<li><strong>sexist</strong> – sexista</li>
+<li><strong>sexism</strong> – sexismo</li>
+<li><strong>gender pay gap</strong> – diferença salarial entre gêneros</li>
+<li><strong>financial outlook</strong> – perspectiva financeira</li>
+<li><strong>backup plan</strong> – plano reserva / plano B</li>
+<li><strong>double standard</strong> – dois pesos e duas medidas</li>
+<li><strong>breadwinner</strong> – provedor(a) financeiro da família</li>
+<li><strong>same occupation</strong> – mesma ocupação</li>
+<li><strong>same job</strong> – mesmo trabalho</li>
+<li><strong>salary</strong> – salário</li>
+<li><strong>earn money</strong> – ganhar dinheiro</li>
+<li><strong>productive</strong> – produtivo(a)</li>
+<li><strong>less productive</strong> – menos produtivo(a)</li>
+<li><strong>pregnant</strong> – grávida</li>
+<li><strong>maternity leave</strong> – licença-maternidade</li>
+<li><strong>social problem</strong> – problema social</li>
+<li><strong>cultural</strong> – cultural</li>
+<li><strong>traditional</strong> – tradicional</li>
+</ul>
+<h3>Family roles and double standards</h3>
+<ul>
+<li><strong>dating</strong> – encontros / namoro</li>
+<li><strong>emotions</strong> – emoções</li>
+<li><strong>cry</strong> – chorar</li>
+<li><strong>crying</strong> – chorando / choro</li>
+<li><strong>parenting</strong> – criação/cuidado dos filhos</li>
+<li><strong>take care of the kids</strong> – cuidar dos filhos</li>
+<li><strong>change diapers</strong> – trocar fraldas</li>
+<li><strong>responsibility</strong> – responsabilidade</li>
+<li><strong>obligation</strong> – obrigação</li>
+<li><strong>stay-at-home mom</strong> – mãe que fica em casa</li>
+<li><strong>stay-at-home dad</strong> – pai que fica em casa</li>
+<li><strong>proportional</strong> – proporcional</li>
+<li><strong>50-50</strong> – meio a meio</li>
+</ul>
+<h3>Career, AI and work</h3>
+<ul>
+<li><strong>career</strong> – carreira</li>
+<li><strong>programming</strong> – programação</li>
+<li><strong>programmer</strong> – programador(a)</li>
+<li><strong>support</strong> – suporte</li>
+<li><strong>help desk</strong> – suporte técnico / help desk</li>
+<li><strong>market</strong> – mercado</li>
+<li><strong>average</strong> – média / mediano(a)</li>
+<li><strong>good enough</strong> – bom o suficiente</li>
+<li><strong>code</strong> – código / programar</li>
+<li><strong>AI is coding</strong> – a IA está programando</li>
+<li><strong>check the code</strong> – verificar o código</li>
+<li><strong>learn from the code</strong> – aprender com o código</li>
+</ul>
+<h3>Graph vocabulary</h3>
+<ul>
+<li><strong>graphic / graph</strong> – gráfico</li>
+<li><strong>work hours</strong> – horas de trabalho</li>
+<li><strong>paid work</strong> – trabalho pago</li>
+<li><strong>unpaid work</strong> – trabalho não pago</li>
+<li><strong>male</strong> – masculino / homem</li>
+<li><strong>female</strong> – feminino / mulher</li>
+<li><strong>comparison</strong> – comparação</li>
+<li><strong>Latin America</strong> – América Latina</li>
+<li><strong>East Asia</strong> – Leste Asiático</li>
+<li><strong>Africa</strong> – África</li>
+<li><strong>equal</strong> – igual</li>
+<li><strong>equality</strong> – igualdade</li>
+</ul>
+</div>
+</section>
+<section>
+<h2 style="margin-bottom:8px;">Frases modelo da aula</h2>
+<div class="outline-card">
+<ul>
+<li>I can't complain.</li>
+<li>The tire was flat.</li>
+<li>I had to change the battery.</li>
+<li>My brother used my car to work.</li>
+<li>What did you give to your mom?</li>
+<li>I gave my mom gymnastic clothes.</li>
+<li>What is a financial outlook?</li>
+<li>What is a gender pay gap?</li>
+<li>What is a backup plan?</li>
+<li>What is a double standard?</li>
+<li>What is a breadwinner?</li>
+<li>Do you think you might be sexist?</li>
+<li>Would you think twice when hiring a woman?</li>
+<li>I don't think that's fair.</li>
+<li>I think it is a social problem.</li>
+<li>Women often do more unpaid work.</li>
+<li>Men usually do more paid work.</li>
+<li>It should be proportional.</li>
+<li>The ideal is equality.</li>
+<li>It's not about gender, it's about the person.</li>
+</ul>
+</div>
+</section>
+<!-- ✅ NOVA SEÇÃO FIXA: CORREÇÕES IMPORTANTES -->
+<section>
+<h2 style="margin-bottom:8px;">Correções importantes</h2>
+<div class="outline-card">
+<ul>
+<li><strong>❌ My boss don't pay her → ✅ My boss didn't pay her</strong><br/>
+  Como a ideia era falar de uma situação passada, usamos <strong>didn't</strong> + verbo na forma base.</li>
+<li><strong>❌ My car finished Wednesday → ✅ My car was finished on Wednesday</strong><br/>
+  Para indicar o dia, usamos <strong>on</strong>: <em>on Wednesday</em>. Também fica mais natural dizer que o carro “ficou pronto”: <em>was finished</em> ou <em>was ready</em>.</li>
+<li><strong>❌ Why did you give to your mom? → ✅ What did you give to your mom?</strong><br/>
+  Para perguntar “o que você deu?”, usamos <strong>what</strong>, não <em>why</em>.</li>
+<li><strong>❌ I didn't read → ✅ I didn't read it</strong><br/>
+  Quando o objeto já está claro, ainda é comum usar <strong>it</strong> para completar a frase: <em>I didn't read it</em>.</li>
+<li><strong>Double standard</strong><br/>
+  Não é apenas tratar duas pessoas de forma diferente por preferência pessoal. É julgar a mesma ação com critérios diferentes dependendo de quem faz. Ex.: um homem sair com várias pessoas é visto como positivo, mas uma mulher fazer o mesmo pode ser julgada negativamente.</li>
+<li><strong>❌ Humans para falar de women → ✅ women</strong><br/>
+  Em várias partes, apareceu confusão entre <em>humans</em>, <em>men</em> e <em>women</em>. Para falar de mulheres, use <strong>women</strong>. Para homens, <strong>men</strong>.</li>
+<li><strong>❌ Woman has jobs that's earning less → ✅ Women often have jobs that earn less</strong><br/>
+  Com plural, usamos <strong>women have</strong>. Para falar de empregos que pagam menos, uma forma natural é <em>jobs that pay less</em> ou <em>jobs that earn less</em>.</li>
+<li><strong>❌ If my plan don't work → ✅ If my plan doesn't work</strong><br/>
+  Com <strong>it/he/she</strong> no presente simples negativo, usamos <strong>doesn't</strong>.</li>
+<li><strong>❌ I am not good in programming → ✅ I am not good at programming</strong><br/>
+  A combinação mais natural é <strong>good at</strong>: <em>I'm good at English</em>, <em>I'm not good at programming</em>.</li>
+<li><strong>❌ People that use AI now coding before → ✅ People who already knew how to code and now use AI</strong><br/>
+  Para explicar essa ideia com clareza: pessoas que já sabiam programar e agora usam IA tendem a aproveitar melhor a ferramenta.</li>
+<li><strong>Paid x Unpaid work</strong><br/>
+<strong>Paid work</strong> é trabalho pago. <strong>Unpaid work</strong> é trabalho não pago, como tarefas domésticas e cuidados com filhos.</li>
+<li><strong>Fewer x less</strong><br/>
+  Para horas contáveis, o ideal é <strong>fewer hours</strong>: <em>Men work fewer hours than women</em>. Em fala informal, <em>less hours</em> aparece, mas <em>fewer</em> é mais correto.</li>
+</ul>
+</div>
+</section>
+<!-- ✅ FIM DA NOVA SEÇÃO -->
+<section>
+<h2 style="margin-bottom:8px;">Transcrição &amp; Gravação</h2>
+<div class="media-row">
+<!-- Transcrição sem link (apenas botão) -->
+<a class="media-btn" href="#" role="button">📄 Acessar transcrição</a>
+<!-- Vídeo da aula com o link que você mandou -->
+<a class="media-btn" href="https://youtu.be/m_ghxJkBciQ" rel="noopener noreferrer" role="button" style="background:linear-gradient(180deg,#1f6fd1,#2f86e6);color:#fff;border:none;min-width:260px;" target="_blank">
+              🎥 Assistir gravação (acesso privado)
+            </a>
+</div>
+</section>
+<!-- ===== TABELA DE DISTRIBUIÇÃO DE FALA ===== -->
+<section aria-label="Distribuição de fala" class="speaking">
+<h2>Tempo de Fala (Talk Time)</h2>
+<table class="talk-table">
+<thead>
+<tr>
+<th>Quem falou</th>
+<th>Porcentagem</th>
+<th>Duração aproximada</th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-teacher">
+<td><span class="talk-label">César (Professor)</span></td>
+<td><span class="talk-percent">38%</span></td>
+<td class="talk-time">~23 minutos</td>
+</tr>
+<tr class="row-student">
+<td><span class="talk-label">Lucas</span></td>
+<td><span class="talk-percent">62%</span></td>
+<td class="talk-time">~37 minutos</td>
+</tr>
+</tbody>
+</table>
+</section>
+<!-- ===== FIM TABELA ===== -->
+<section>
+<h2 style="margin-bottom:8px;">Homework</h2>
+<div class="homework">
+<p style="margin:0;">
+  📌 <strong>Lição de casa:</strong> LEMBRAR de LER O POS AULA DE 2 A 3X NA SEMANA
+</p>
+</div>
+<div style="margin-top:14px;">
+<a class="btn" href="https://wa.me" style="background:#25D366;border-radius:10px;box-shadow:none;">
+              💬 Falar comigo no WhatsApp
+            </a>
+</div>
+</section>
+</main>
+<footer>
+<p style="margin:18px 0 0 0;color:var(--muted);font-size:0.9rem;">
+          © 2025 CZK English • Este conteúdo é exclusivo para fins educacionais. • Suporte: czkenglish@gmail.com
+        </p>
+</footer>
+</article>
+</div>
+</body>
+</html>
